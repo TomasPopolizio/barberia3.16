@@ -240,6 +240,25 @@ p { margin: 0; }
 .hours dt { color: var(--muted); }
 .hours dd { margin: 0; }
 
+/* Juan 3:16 */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.verse-section { background: var(--surface); border-block: 1px solid var(--line); }
+.verse { display: grid; gap: 28px; align-items: center; }
+@media (min-width: 860px) { .verse { grid-template-columns: 1.2fr 1fr; gap: 48px; } }
+.verse-text { margin: 0; display: grid; gap: 14px; min-width: 0; }
+.verse-text p {
+  font-family: var(--font-paint); font-size: clamp(1.9rem, 5.2vw, 3rem); line-height: 1.12;
+  transform: rotate(-1.5deg); transform-origin: left center; text-wrap: balance;
+}
+.verse-text cite { font-family: var(--font-paint); font-style: normal; font-size: var(--step-2); color: var(--brick); justify-self: end; }
+.verse-photo { margin: 0; display: grid; gap: 8px; }
+.verse-photo img, .gallery img { width: 100%; max-width: 100%; border-radius: var(--radius-panel); object-fit: cover; }
+.verse-photo img { aspect-ratio: 674 / 384; }
+.verse-photo figcaption { color: var(--muted); font-size: var(--step--1); }
+.gallery { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.gallery figure { margin: 0; }
+.gallery img { aspect-ratio: 1 / 1; }
+
 /* Reseñas */
 .reviews { display: grid; gap: 24px; }
 @media (min-width: 760px) { .reviews { grid-template-columns: 1fr 1.6fr; align-items: start; } }
