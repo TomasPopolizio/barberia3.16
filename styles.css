@@ -22,6 +22,13 @@
   --step-3: 2.2rem;
   --step-hero: clamp(3.2rem, 11vw, 6.6rem);
 
+  /* Texto sobre la foto de la fachada: igual en los dos temas */
+  --hero-ink: #f6f1e7;
+  --hero-muted: rgba(246, 241, 231, .78);
+  --hero-line: rgba(246, 241, 231, .22);
+  --hero-gold: #d9b56c;
+  --hero-shade: #14100d;
+
   --radius-panel: 18px;
   --radius-chip: 10px;
   --wrap: 1080px;
@@ -95,32 +102,45 @@ p { margin: 0; }
 .brand span { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; line-height: 1; }
 .site-header .btn { min-height: 40px; padding: 0 16px; font-size: var(--step--1); }
 
-/* Hero: el versículo, las reseñas y la fachada */
-.hero { border-bottom: 1px solid var(--line); }
-.hero .wrap { display: grid; gap: 36px; padding-block: 48px 56px; }
-.hero-copy { display: grid; gap: 24px; min-width: 0; }
+/* Hero: la fachada a todo el ancho; encima, el versículo y las reseñas */
+.hero { position: relative; border-bottom: 1px solid var(--line); }
+.hero-media { margin: 0; background: var(--hero-shade); }
+.hero-media img { width: 100%; max-width: 100%; aspect-ratio: 408 / 266; object-fit: cover; object-position: center 20%; }
+.hero .wrap { display: grid; gap: 24px; padding-block: 28px 44px; }
+.hero-copy, .hero-side { display: grid; gap: 20px; min-width: 0; }
 .eyebrow { font-size: var(--step--1); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--brass); }
-.hero-verse { margin: 0; display: grid; gap: 14px; }
+.hero-verse { margin: 0; padding: 0; border: 0; display: grid; gap: 14px; }
 .hero-verse p {
   font-family: var(--font-display); font-style: italic; font-weight: 500;
-  font-size: clamp(1.75rem, 3.4vw, 2.5rem); line-height: 1.22; max-width: 26ch; text-wrap: balance;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem); line-height: 1.2; max-width: 34ch; text-wrap: balance;
 }
 .hero-verse cite {
   display: flex; align-items: center; gap: 12px; font-style: normal;
   font-size: var(--step--1); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--brass);
 }
 .hero-verse cite::before { content: ""; width: 36px; border-top: 1.5px solid currentColor; }
-.hero-rating { display: flex; align-items: center; gap: 16px; padding-block: 16px; border-block: 1px solid var(--line); }
+.hero-rating { display: flex; align-items: center; gap: 16px; padding-block: 14px; border-block: 1px solid var(--line); }
 .hero-rating .big { font-family: var(--font-display); font-weight: 600; font-size: 3rem; line-height: 1; font-variant-numeric: tabular-nums; }
 .rating-text { display: grid; gap: 2px; color: var(--muted); font-size: var(--step--1); }
 .rating-text .stars { font-size: var(--step-1); }
 .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .stars { color: var(--brass); letter-spacing: 2px; }
-.hero-photo { margin: 0; display: grid; gap: 10px; max-width: 100%; }
-.hero-photo img { width: 100%; max-width: 100%; aspect-ratio: 408 / 266; object-fit: cover; border-radius: var(--radius-panel); }
-.hero-photo figcaption { color: var(--muted); font-size: var(--step--1); }
-@media (min-width: 860px) {
-  .hero .wrap { grid-template-columns: 1.05fr 1fr; align-items: center; gap: 56px; padding-block: 72px; }
+
+@media (min-width: 760px) {
+  .hero { display: grid; min-height: clamp(560px, 80vh, 740px); background: var(--hero-shade); color: var(--hero-ink); }
+  .hero-media { position: absolute; inset: 0; }
+  .hero-media img { height: 100%; aspect-ratio: auto; }
+  .hero-media::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(20, 16, 13, .95) 0%, rgba(20, 16, 13, .8) 38%, rgba(20, 16, 13, .15) 72%, rgba(20, 16, 13, 0) 100%);
+  }
+  .hero .wrap { position: relative; width: 100%; align-self: end; grid-template-columns: 1.5fr 1fr; align-items: end; gap: 48px; padding-block: 56px; }
+  .hero .eyebrow, .hero-verse cite, .hero .stars { color: var(--hero-gold); }
+  .hero .rating-text { color: var(--hero-muted); }
+  .hero-rating { border-color: var(--hero-line); }
+  .hero .btn { background: var(--hero-ink); border-color: var(--hero-ink); color: var(--hero-shade); }
+  .hero .btn--ghost { background: transparent; color: var(--hero-ink); }
+  .hero .btn:hover { background: var(--brick); border-color: var(--brick); color: #fff; }
 }
 
 /* Secciones */
