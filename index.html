@@ -6,7 +6,7 @@
 <meta name="description" content="Barbería 3:16 en San Martín. Cortes, barba y combos con Agustín y Enzo. Reservá tu turno online en un minuto.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Familjen+Grotesk:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Familjen+Grotesk:wght@400;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 
 <header class="site-header">
@@ -22,18 +22,45 @@
 <main id="inicio">
   <section class="hero">
     <div class="wrap">
-      <div style="display:grid;gap:22px">
-        <h1>Tu corte, con calma y en familia.</h1>
-        <p class="lede">Agustín y Enzo te esperan en el centro de San Martín, a una cuadra de la plaza. Elegí servicio, barbero y horario, y listo.</p>
+      <div class="hero-copy">
+        <p class="eyebrow">Barbería en San Martín, Buenos Aires</p>
+        <h1 class="visually-hidden">Barbería 3:16</h1>
+        <blockquote class="hero-verse">
+          <p>“Dios amó tanto al mundo que dio a su único Hijo, para que todo el que crea en Él no se pierda, sino que tenga vida eterna.”</p>
+          <cite>Juan 3:16</cite>
+        </blockquote>
+        <div class="hero-rating">
+          <span class="big">5,0</span>
+          <span class="rating-text"><span class="stars" aria-label="5 de 5 estrellas">★★★★★</span><span>148 reseñas en Google y 47 en la agenda online</span></span>
+        </div>
         <div class="actions">
           <a class="btn" href="#reservar">Reservar turno</a>
           <a class="btn btn--ghost" href="#precios">Ver precios</a>
         </div>
-        <p class="proof"><span><span class="stars" aria-hidden="true">★★★★★</span> <strong>5,0</strong> en Google, 148 reseñas</span><span>Corte desde <strong>$18.000</strong></span></p>
       </div>
-      <figure class="hero-photo" style="margin:0">
+      <figure class="hero-photo">
         <img src="img/fachada.jpg" alt="La fachada de Barbería 3:16, con el cartel de madera sobre la puerta de vidrio y el poste de barbero a la izquierda" onerror="this.remove()">
+        <figcaption>Dr. Ramón Carrillo 2322, a una cuadra de la plaza</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="section" id="resenas" aria-labelledby="resenas-title">
+    <div class="wrap">
+      <h2 id="resenas-title">Lo que dicen los clientes</h2>
+      <div class="reviews">
+        <div class="quotes">
+          <blockquote>
+            <p>Van mis hijos y siempre excelente todo: la organización, el trato y los cortes.</p>
+            <cite>Virginia, corte de cabello con Agustín</cite>
+          </blockquote>
+          <blockquote>
+            <p>Excelente atención y servicio de ambos.</p>
+            <cite>Lucas, corte de cabello con Enzo</cite>
+          </blockquote>
+          <a class="link" href="https://www.google.com/maps/search/?api=1&query=Barber%C3%ADa+3%3A16+Ram%C3%B3n+Carrillo+2322+San+Mart%C3%ADn" target="_blank" rel="noopener">Leer todas las reseñas en Google</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -80,20 +107,11 @@
     </div>
   </section>
 
-  <section class="section verse-section" id="juan-316" aria-labelledby="juan-316-title">
+  <section class="section verse-section" id="el-local" aria-labelledby="juan-316-title">
     <div class="wrap">
-      <h2 id="juan-316-title" class="visually-hidden">Juan 3:16</h2>
+      <h2 id="juan-316-title">El local</h2>
       <div class="verse">
-        <blockquote class="verse-text">
-          <p>“Dios amó tanto al mundo que dio a su único Hijo, para que todo el que crea en Él no se pierda, sino que tenga vida eterna.”</p>
-          <cite>Juan 3:16</cite>
-        </blockquote>
-        <figure class="verse-photo">
-          <img src="img/versiculo.jpg" alt="El versículo de Juan 3:16 pintado a mano en la pared del local" onerror="this.remove()">
-          <figcaption>Pintado a mano en la pared del local. De acá sale el nombre.</figcaption>
-        </figure>
-      </div>
-      <div class="about">
+        <div class="about">
         <img class="about-logo" src="img/logo.png" alt="Logo de Barbería 3:16: una navaja sobre el nombre, en dorado sobre negro" onerror="this.remove()">
         <div class="about-text">
           <h3>Mucho más que un corte</h3>
@@ -101,33 +119,14 @@
           <p>No solo trabajamos con tijeras, navajas y máquinas: también creamos un ambiente donde la paz y la buena atención marcan la diferencia. Queremos que cada cliente viva una experiencia única, donde el estilo y los valores van de la mano. Vení y conocé la experiencia.</p>
         </div>
       </div>
+        <figure class="verse-photo">
+          <img src="img/versiculo.jpg" alt="El versículo de Juan 3:16 pintado a mano en la pared del local" onerror="this.remove()">
+          <figcaption>Juan 3:16, pintado a mano en la pared del local. De acá sale el nombre.</figcaption>
+        </figure>
+      </div>
       <div class="gallery">
         <figure><img src="img/local.jpg" alt="Adentro del local: dos cortes en simultáneo, el mate y el termo sobre la mesada" loading="lazy" onerror="this.remove()"></figure>
         <figure><img src="img/barba.jpg" alt="Un barbero perfilando la barba de un cliente con peine" loading="lazy" onerror="this.remove()"></figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="resenas" aria-labelledby="resenas-title">
-    <div class="wrap">
-      <h2 id="resenas-title">Lo que dicen los clientes</h2>
-      <div class="reviews">
-        <div class="score">
-          <span class="big">5,0</span>
-          <span class="stars" aria-hidden="true">★★★★★</span>
-          <p>148 reseñas en Google y 47 en la agenda online, todas de 5 estrellas.</p>
-        </div>
-        <div class="quotes">
-          <blockquote>
-            <p>Van mis hijos y siempre excelente todo: la organización, el trato y los cortes.</p>
-            <cite>Virginia, corte de cabello con Agustín</cite>
-          </blockquote>
-          <blockquote>
-            <p>Excelente atención y servicio de ambos.</p>
-            <cite>Lucas, corte de cabello con Enzo</cite>
-          </blockquote>
-          <a class="link" href="https://www.google.com/maps/search/?api=1&query=Barber%C3%ADa+3%3A16+Ram%C3%B3n+Carrillo+2322+San+Mart%C3%ADn" target="_blank" rel="noopener">Leer todas las reseñas en Google</a>
-        </div>
       </div>
     </div>
   </section>
