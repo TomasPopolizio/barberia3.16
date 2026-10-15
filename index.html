@@ -1,0 +1,149 @@
+<!doctype html>
+<title>Barbería 3:16</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Barbería 3:16 en San Martín. Cortes, barba y combos con Agustín y Enzo. Reservá tu turno online en un minuto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Familjen+Grotesk:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Barbería 3:16, inicio">
+      <img src="https://dcx13p9dsx90t.cloudfront.net/uploads/logos/page_logo_375c2370f0715ae9.png" alt="" onerror="this.remove()">
+      <span>Barbería 3:16</span>
+    </a>
+    <a class="btn" href="#reservar">Reservar turno</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div style="display:grid;gap:22px">
+        <h1>Tu corte, con calma y en familia.</h1>
+        <p class="lede">Agustín y Enzo te esperan en el centro de San Martín, a una cuadra de la plaza. Elegí servicio, barbero y horario, y listo.</p>
+        <div class="actions">
+          <a class="btn" href="#reservar">Reservar turno</a>
+          <a class="btn btn--ghost" href="#precios">Ver precios</a>
+        </div>
+        <p class="proof"><span><span class="stars" aria-hidden="true">★★★★★</span> <strong>5,0</strong> en Google, 148 reseñas</span><span>Corte desde <strong>$18.000</strong></span></p>
+      </div>
+      <figure class="hero-photo" style="margin:0">
+        <img src="https://dcx13p9dsx90t.cloudfront.net/uploads/attachment_images/160649/attachment_417f3b1f7e8a3b32.png" alt="La pared del local, con el versículo de Juan 3:16 pintado a mano sobre ladrillo" onerror="this.remove()">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="reservar" aria-labelledby="reservar-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="reservar-title">Reservá tu turno</h2>
+        <p>Cuatro pasos y te confirmamos por WhatsApp. Solo te pedimos tu nombre y tu número.</p>
+      </div>
+      <div class="booking">
+        <ol class="stepper" id="stepper"></ol>
+        <div class="step-body" id="step-body" aria-live="polite"></div>
+        <div class="summary" id="summary">
+          <div class="summary-text">
+            <span class="line1" id="sum-line1">Todavía no elegiste servicio</span>
+            <span class="line2" id="sum-line2">Elegí uno para empezar</span>
+          </div>
+          <div class="nav">
+            <button class="btn btn--ghost" id="btn-back" type="button">Volver</button>
+            <button class="btn" id="btn-next" type="button">Continuar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="precios" aria-labelledby="precios-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="precios-title">Precios</h2>
+        <p>Los mismos precios con los dos barberos. Las cejas y el diseño se suman a cualquier corte.</p>
+      </div>
+      <div class="prices" id="price-list"></div>
+    </div>
+  </section>
+
+  <section class="section" id="barberos" aria-labelledby="barberos-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="barberos-title">Los barberos</h2>
+        <p>Dos hermanos, el mismo trato. Podés elegir con quién o tomar el primer horario libre.</p>
+      </div>
+      <div class="team" id="team"></div>
+    </div>
+  </section>
+
+  <section class="section" id="resenas" aria-labelledby="resenas-title">
+    <div class="wrap">
+      <h2 id="resenas-title">Lo que dicen los clientes</h2>
+      <div class="reviews">
+        <div class="score">
+          <span class="big">5,0</span>
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>148 reseñas en Google y 47 en la agenda online, todas de 5 estrellas.</p>
+        </div>
+        <div class="quotes">
+          <blockquote>
+            <p>Van mis hijos y siempre excelente todo: la organización, el trato y los cortes.</p>
+            <cite>Virginia, corte de cabello con Agustín</cite>
+          </blockquote>
+          <blockquote>
+            <p>Excelente atención y servicio de ambos.</p>
+            <cite>Lucas, corte de cabello con Enzo</cite>
+          </blockquote>
+          <a class="link" href="https://www.google.com/maps/search/?api=1&query=Barber%C3%ADa+3%3A16+Ram%C3%B3n+Carrillo+2322+San+Mart%C3%ADn" target="_blank" rel="noopener">Leer todas las reseñas en Google</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="visitanos" aria-labelledby="visitanos-title">
+    <div class="wrap">
+      <h2 id="visitanos-title">Cómo llegar</h2>
+      <div class="visit">
+        <div class="visit-item">
+          <span class="label">Dirección</span>
+          <span>Dr. Ramón Carrillo 2322, San Martín</span>
+          <span class="muted">A una cuadra de la Plaza San Martín y de la Municipalidad.</span>
+          <a class="link" href="https://www.google.com/maps/dir/?api=1&destination=-34.5757764,-58.5404412" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        </div>
+        <div class="visit-item">
+          <span class="label">Horario</span>
+          <dl class="hours">
+            <dt>Lunes a viernes</dt><dd>9:00 a 18:00</dd>
+            <dt>Sábados</dt><dd>9:00 a 18:00</dd>
+            <dt>Domingos</dt><dd>Cerrado</dd>
+          </dl>
+          <span class="muted">El horario exacto depende del barbero que elijas.</span>
+        </div>
+        <div class="visit-item">
+          <span class="label">WhatsApp</span>
+          <div class="copy-row">
+            <span class="num" id="wa-number">11 2193-3162</span>
+            <button class="small-btn" type="button" id="copy-wa">Copiar</button>
+          </div>
+          <a class="link" href="https://wa.me/541121933162" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          <a class="link" href="https://www.instagram.com/barberiatres16/" target="_blank" rel="noopener">Instagram @barberiatres16</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Barbería 3:16, San Martín, Buenos Aires</span>
+    <span>Rediseño conceptual por Tomás Popolizio</span>
+  </div>
+</footer>
+
+<div class="mobile-bar" id="mobile-bar"><a class="btn" href="#reservar">Reservar turno</a></div>
+
+<script src="app.js"></script>
