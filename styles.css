@@ -255,6 +255,12 @@ p { margin: 0; }
 .verse-photo img, .gallery img { width: 100%; max-width: 100%; border-radius: var(--radius-panel); object-fit: cover; }
 .verse-photo img { aspect-ratio: 674 / 384; }
 .verse-photo figcaption { color: var(--muted); font-size: var(--step--1); }
+.about { display: grid; gap: 20px; align-items: start; }
+@media (min-width: 700px) { .about { grid-template-columns: 120px 1fr; gap: 28px; } }
+.about-logo { width: 120px; height: 120px; border-radius: 16px; object-fit: cover; }
+.about-text { display: grid; gap: 10px; max-width: 62ch; min-width: 0; }
+.about-text h3 { font-size: var(--step-2); }
+.about-text p { color: var(--muted); }
 .gallery { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
 .gallery figure { margin: 0; }
 .gallery img { aspect-ratio: 1 / 1; }
