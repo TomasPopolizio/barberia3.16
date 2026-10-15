@@ -2,9 +2,8 @@
    Datos tomados de la agenda online actual del local (AgendaPro), octubre 2026. */
 
 const CONFIG = {
-  // En modo demo el botón final abre WhatsApp sin destinatario, para no escribirle al local por error.
-  // Para usarlo de verdad, poné DEMO en false.
-  DEMO: true,
+  // En true, el botón final abre WhatsApp sin destinatario (útil para probar sin escribirle al local).
+  DEMO: false,
   whatsapp: "541121933162",
   agendaUrl: "https://barberiaa316.site.agendapro.com/ar/sucursal/93700",
   daysAhead: 12,
@@ -247,6 +246,7 @@ function renderDone() {
       <a class="btn" href="${href}" target="_blank" rel="noopener">Enviar por WhatsApp</a>
       <button type="button" class="btn btn--ghost" id="btn-restart">Hacer otra reserva</button>
     </div>
+    <p class="note">El turno queda confirmado cuando te responden. ¿Preferís reservar directo en la agenda? <a class="link" href="${CONFIG.agendaUrl}" target="_blank" rel="noopener">Abrir la agenda online</a></p>
     ${CONFIG.DEMO ? `<p class="note">Versión de muestra: el mensaje se abre en WhatsApp sin destinatario, así no le llega al local.</p>` : ""}
   </div>`;
 }

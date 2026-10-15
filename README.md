@@ -25,31 +25,29 @@ Hoy el local solo tiene la página estándar de AgendaPro. Esta propuesta le da 
 
 Al final se arma un mensaje de WhatsApp con todo el pedido.
 
-> **Modo demo:** en `app.js`, `CONFIG.DEMO` está en `true`, así el mensaje se abre en WhatsApp sin destinatario y no le llega al local. Ponelo en `false` para usar el número real.
+> **Reserva:** el botón final abre WhatsApp con el pedido listo para mandar al local (11 2193-3162). Para probar sin escribirle al local, poné `CONFIG.DEMO` en `true` en `app.js`: así el mensaje se abre sin destinatario. También hay un enlace a la agenda online de AgendaPro.
 >
-> Los horarios disponibles salen del horario de atención, no de la agenda real. En una versión productiva se conectaría con la API de AgendaPro o se usaría su enlace de reserva.
+> Los horarios disponibles salen del horario de atención, no de la agenda real. El turno queda confirmado cuando el local responde por WhatsApp.
 
 ## Estructura
 
 ```
 index.html   página
 styles.css   estilos (tema claro y oscuro)
-app.js       datos del local y lógica de reserva
+app.js       datos del local, reseñas y lógica de reserva
+img/         logo y fotos del local
 ```
 
 Sin dependencias ni build: abrí `index.html` en el navegador.
 
-## Subirlo a GitHub
+## Publicarlo con GitHub Pages
 
-```bash
-# 1. Creá un repositorio vacío en github.com (por ejemplo: barberia-316)
-# 2. Desde esta carpeta:
-git remote add origin https://github.com/TU-USUARIO/barberia-316.git
-git push -u origin main
-```
+El código está en la rama `main` de este repositorio. Para publicarlo gratis:
 
-Para publicarlo gratis: en el repo, **Settings → Pages → Branch: main / root**. En un minuto queda en `https://TU-USUARIO.github.io/barberia-316/`.
+1. En el repo, entrá a **Settings → Pages**.
+2. En **Source** elegí **Deploy from a branch**, rama **main**, carpeta **/ (root)**, y guardá.
+3. En uno o dos minutos queda en `https://tomaspopolizio.github.io/barberia3.16/`.
 
 ## Datos
 
-Servicios, precios, duraciones, barberos, horarios, dirección y reseñas tomados de la agenda online pública del local (octubre 2026). Las fotos se cargan desde los servidores de AgendaPro.
+Servicios, precios, duraciones, barberos, horarios, dirección y reseñas tomados de la agenda online pública del local (octubre 2026). Las fotos de los barberos se cargan desde los servidores de AgendaPro; el resto está en `img/`. Las reseñas son de Google Maps y de la agenda online, con la ortografía corregida.

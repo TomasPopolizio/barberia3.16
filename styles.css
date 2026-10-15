@@ -336,11 +336,35 @@ p { margin: 0; }
 #more-reviews { justify-self: start; }
 
 /* Visitanos */
-.visit { display: grid; gap: 24px; }
-@media (min-width: 760px) { .visit { grid-template-columns: repeat(3, 1fr); } }
-.visit-item { display: grid; gap: 8px; align-content: start; }
-.visit-item .label { font-weight: 700; }
-.visit-item .muted { color: var(--muted); }
+.visit { display: grid; gap: 28px; }
+@media (min-width: 860px) { .visit { grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: start; } }
+.visit-photo { position: relative; margin: 0; overflow: hidden; border-radius: var(--radius-panel); max-width: 100%; }
+.visit-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.visit-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20, 16, 13, .9), rgba(20, 16, 13, 0) 50%); pointer-events: none; }
+.visit-photo figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 18px; color: var(--hero-ink); font-size: var(--step--1);
+}
+.visit-photo .btn { background: var(--hero-ink); border-color: var(--hero-ink); color: var(--hero-shade); min-height: 42px; font-size: var(--step--1); }
+.visit-photo .btn:hover { background: var(--brick); border-color: var(--brick); color: #fff; }
+@media (max-width: 520px) {
+  .visit-photo::after { display: none; }
+  .visit-photo figcaption { position: static; color: var(--muted); padding: 12px 0 0; }
+  .visit-photo .btn { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
+}
+.visit-info { display: grid; gap: 24px; min-width: 0; }
+.visit-item { display: grid; gap: 6px; align-content: start; }
+.visit-item .label { font-size: var(--step--1); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--brass); }
+.visit-item .muted { color: var(--muted); font-size: var(--step--1); }
+.insta {
+  display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 14px; padding: 16px 18px;
+  border: 1.5px solid var(--line); border-radius: var(--radius-chip); text-decoration: none; background: var(--surface);
+}
+.insta:hover { border-color: var(--brass); }
+.insta svg { width: 32px; height: 32px; fill: none; stroke: var(--brass); stroke-width: 1.7; }
+.insta-text { display: grid; gap: 2px; min-width: 0; }
+.insta-text span { color: var(--muted); font-size: var(--step--1); }
+.insta-arrow { font-size: var(--step-1); color: var(--brass); }
 .copy-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .copy-row .num { font-variant-numeric: tabular-nums; user-select: all; font-weight: 600; }
 .link { font-weight: 700; text-underline-offset: 3px; }
