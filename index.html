@@ -6,7 +6,7 @@
 <meta name="description" content="Barbería 3:16 en San Martín. Cortes, barba y combos con Agustín y Enzo. Reservá tu turno online en un minuto.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Playfair+Display:wght@500;600&family=Familjen+Grotesk:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Familjen+Grotesk:wght@400;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 
 <header class="site-header">
@@ -27,7 +27,7 @@
     <div class="wrap">
       <div class="hero-copy">
         <p class="eyebrow">Dr. Ramón Carrillo 2322, San Martín</p>
-        <h1 class="visually-hidden">Barbería 3:16</h1>
+        <h1 class="hero-title">Barbería 3:16</h1>
         <blockquote class="hero-verse">
           <p>“Dios amó tanto al mundo que dio a su único Hijo, para que todo el que crea en Él no se pierda, sino que tenga vida eterna.”</p>
           <cite>Juan 3:16</cite>
@@ -49,19 +49,12 @@
   <section class="section" id="resenas" aria-labelledby="resenas-title">
     <div class="wrap">
       <h2 id="resenas-title">Lo que dicen los clientes</h2>
-      <div class="reviews">
-        <div class="quotes">
-          <blockquote>
-            <p>Van mis hijos y siempre excelente todo: la organización, el trato y los cortes.</p>
-            <cite>Virginia, corte de cabello con Agustín</cite>
-          </blockquote>
-          <blockquote>
-            <p>Excelente atención y servicio de ambos.</p>
-            <cite>Lucas, corte de cabello con Enzo</cite>
-          </blockquote>
-          <a class="link" href="https://www.google.com/maps/search/?api=1&query=Barber%C3%ADa+3%3A16+Ram%C3%B3n+Carrillo+2322+San+Mart%C3%ADn" target="_blank" rel="noopener">Leer todas las reseñas en Google</a>
-        </div>
+      <div class="reviews-head">
+        <p class="muted">5,0 de promedio con 148 reseñas en Google. Estas son algunas.</p>
+        <a class="link" href="https://www.google.com/maps/search/?api=1&query=Barber%C3%ADa+3%3A16+Ram%C3%B3n+Carrillo+2322+San+Mart%C3%ADn" target="_blank" rel="noopener">Ver todas en Google Maps</a>
       </div>
+      <div class="review-grid" id="review-grid"></div>
+      <button class="btn btn--ghost" type="button" id="more-reviews" hidden>Ver más reseñas</button>
     </div>
   </section>
 

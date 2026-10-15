@@ -12,8 +12,8 @@
   --brass-soft: #ece2cc;
   --brick-soft: #f1dcd5;
 
-  --font-display: "Cormorant Garamond", Garamond, Georgia, serif;
-  --font-hero: "Playfair Display", "Times New Roman", Georgia, serif;
+  --font-display: "Lora", Georgia, "Times New Roman", serif;
+  --font-hero: "Lora", Georgia, "Times New Roman", serif;
   --font-ui: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
 
   --step--1: 0.875rem;
@@ -100,20 +100,21 @@ p { margin: 0; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .brand img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
-.brand span { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; line-height: 1; }
+.brand span { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; line-height: 1; }
 .site-header .btn { min-height: 40px; padding: 0 16px; font-size: var(--step--1); }
 
 /* Hero: la fachada a todo el ancho; encima, el versículo y las reseñas */
 .hero { position: relative; border-bottom: 1px solid var(--line); }
 .hero-media { margin: 0; background: var(--hero-shade); }
-.hero-media img { width: 100%; max-width: 100%; aspect-ratio: 408 / 266; object-fit: cover; object-position: center 20%; }
+.hero-media img { width: 100%; max-width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: center 25%; }
 .hero .wrap { display: grid; gap: 24px; padding-block: 28px 44px; }
 .hero-copy, .hero-side { display: grid; gap: 20px; min-width: 0; }
+.hero-title { font-family: var(--font-hero); font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.05; letter-spacing: -0.01em; }
 .eyebrow { font-size: var(--step--1); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--brass); }
 .hero-verse { margin: 0; padding: 0; border: 0; display: grid; gap: 14px; }
 .hero-verse p {
   font-family: var(--font-hero); font-style: normal; font-weight: 500;
-  font-size: clamp(1.45rem, 2.7vw, 2.2rem); line-height: 1.3; max-width: 36ch; text-wrap: balance;
+  font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.45; max-width: 44ch; text-wrap: pretty;
 }
 .hero-verse cite {
   display: flex; align-items: center; gap: 12px; font-style: normal;
@@ -121,7 +122,7 @@ p { margin: 0; }
 }
 .hero-verse cite::before { content: ""; width: 36px; border-top: 1.5px solid currentColor; }
 .hero-rating { display: flex; align-items: center; gap: 16px; padding-block: 14px; border-block: 1px solid var(--line); }
-.hero-rating .big { font-family: var(--font-hero); font-weight: 600; font-size: 3rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.hero-rating .big { font-family: var(--font-hero); font-weight: 600; font-size: 2.6rem; line-height: 1; font-variant-numeric: tabular-nums; }
 .rating-text { display: grid; gap: 2px; color: var(--muted); font-size: var(--step--1); }
 .rating-text .stars { font-size: var(--step-1); }
 .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -246,7 +247,7 @@ p { margin: 0; }
 /* Lista de precios */
 .prices { display: grid; gap: 36px; }
 @media (min-width: 760px) { .prices { grid-template-columns: repeat(2, 1fr); gap: 36px 56px; } }
-.price-group h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.9rem; margin-bottom: 8px; }
+.price-group h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.6rem; margin-bottom: 8px; }
 .price-row { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 10px; padding: 8px 0; }
 .price-row .leader { border-bottom: 2px dotted var(--line); transform: translateY(-4px); }
 .price-row .val { font-weight: 700; font-variant-numeric: tabular-nums; }
@@ -282,16 +283,23 @@ p { margin: 0; }
 .gallery img { aspect-ratio: 1 / 1; }
 
 /* Reseñas */
-.reviews { display: grid; gap: 24px; }
-
-.score { display: grid; gap: 4px; }
-.score .big { font-size: 4.5rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
-.score p { color: var(--muted); }
-.quotes { display: grid; gap: 18px 40px; }
-@media (min-width: 760px) { .quotes { grid-template-columns: repeat(2, 1fr); } .quotes .link { grid-column: 1 / -1; } }
-blockquote { margin: 0; padding-left: 18px; border-left: 3px solid var(--brass); display: grid; gap: 6px; }
-blockquote p { font-size: var(--step-1); }
-blockquote cite { font-style: normal; color: var(--muted); font-size: var(--step--1); }
+.reviews-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 20px; margin-top: -12px; }
+.muted { color: var(--muted); }
+.review-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); }
+.review {
+  display: grid; grid-template-rows: auto 1fr; gap: 14px; margin: 0; padding: 20px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-chip);
+}
+.review-who { display: grid; grid-template-columns: 40px 1fr; gap: 0 12px; align-items: center; }
+.review-who .initial {
+  grid-row: span 2; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--brass-soft); color: var(--brass); font-weight: 700;
+}
+.review-who .name { font-weight: 700; line-height: 1.2; }
+.review-who .src { color: var(--muted); font-size: var(--step--1); line-height: 1.3; }
+.review-who .src .stars { font-size: .8rem; letter-spacing: 1px; margin-right: 4px; }
+.review p { line-height: 1.55; }
+#more-reviews { justify-self: start; }
 
 /* Visitanos */
 .visit { display: grid; gap: 24px; }

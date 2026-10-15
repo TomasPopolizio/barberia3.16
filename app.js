@@ -35,6 +35,26 @@ const BARBERS = [
     hours: { 1: ["09:00", "18:00"], 2: ["09:00", "17:30"], 3: ["09:00", "18:00"], 4: ["09:00", "17:30"], 5: ["09:00", "18:00"], 6: ["09:00", "18:00"] },
   },
 ];
+// Reseñas reales. Las de Google, de Google Maps; las otras, de la agenda online. Solo se corrigió la ortografía.
+const REVIEWS = [
+  { name: "Nelson Varela", src: "Google", text: "¡Excelente el servicio! Son puntuales con los turnos, buena onda, te cortan tranquilos y atentos a todos los detalles. Ya fui muchas veces y siempre salí contento. Los recomiendo." },
+  { name: "Alejandra Tosi", src: "Google · Local Guide", text: "Excelente la atención y muy profesional. A mi hijo le encantó el corte, ¡vamos a volver! ¡Súper recomendable!" },
+  { name: "Pablo Daniel", src: "Google · Local Guide", text: "Son los mejores de San Martín, súper detallistas y atentos. Agustín, un capo. Los súper recomiendo." },
+  { name: "Hernán Guzmán", src: "Google", text: "Excelente atención, muy amables y siempre te atienden con la mejor onda. ¡El servicio es espectacular! Súper recomendable." },
+  { name: "Feche", src: "Google", text: "¡Agus y Enzo son unos fenómenos! Cortan muy prolijo y son súper amables." },
+  { name: "Virginia", src: "Agenda online · Corte con Agustín", text: "Van mis hijos y siempre excelente todo: la organización, el trato y los cortes." },
+  { name: "Jula Puntoriero", src: "Google", text: "Excelente atención. ¡Muy amigables! Desde que fui la primera vez voy siempre." },
+  { name: "Gabriel", src: "Google", text: "¡Excelente atención! Siempre al detalle de lo que uno quiere en su corte." },
+  { name: "Rodrigo Menichelli", src: "Google", text: "Felicitaciones por el nuevo lugar. La atención y buena onda como siempre." },
+  { name: "Máximo Caraballo", src: "Google", text: "Muy buen servicio. Estoy bastante conforme con los servicios brindados, son muy copados y prolijos." },
+  { name: "Rodo Oviedo", src: "Google", text: "Muy buen servicio, precios acordes y los chicos son unos copados." },
+  { name: "Lucas", src: "Agenda online · Corte con Enzo", text: "Excelente atención y servicio de ambos." },
+  { name: "Pamela Di Chiara", src: "Google", text: "Excelente atención y servicio, súper recomendable." },
+  { name: "Tomás Ceballos", src: "Google", text: "¡Muy buen lugar! Lo recomiendo, muy buenos barberos." },
+  { name: "Natanael Robledo", src: "Google", text: "Buen servicio, buenos cortes y gente copada." },
+];
+const REVIEWS_SHOWN = 6;
+
 const DAY_LONG = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 const DAY_SHORT = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
 const MONTHS = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
@@ -329,6 +349,18 @@ function renderTeam() {
   });
 }
 
+function renderReviews(all) {
+  const list = all ? REVIEWS : REVIEWS.slice(0, REVIEWS_SHOWN);
+  $("review-grid").innerHTML = list.map((r) => `<figure class="review">
+      <figcaption class="review-who"><span class="initial" aria-hidden="true">${esc(r.name[0])}</span>
+        <span class="name">${esc(r.name)}</span><span class="src">${esc(r.src)}</span></figcaption>
+      <p>${esc(r.text)}</p></figure>`).join("");
+  const more = $("more-reviews");
+  more.hidden = all || REVIEWS.length <= REVIEWS_SHOWN;
+  more.textContent = `Ver las ${REVIEWS.length} reseñas`;
+}
+$("more-reviews").addEventListener("click", () => renderReviews(true));
+
 $("copy-wa").addEventListener("click", async (ev) => {
   const btn = ev.currentTarget;
   try { await navigator.clipboard.writeText("+54 9 11 2193-3162"); btn.textContent = "Copiado"; }
@@ -345,4 +377,5 @@ if ("IntersectionObserver" in window) {
 
 renderPrices();
 renderTeam();
+renderReviews(false);
 render();
